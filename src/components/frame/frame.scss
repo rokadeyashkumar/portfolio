@@ -1,43 +1,62 @@
 .content {
-    position: relative;
-    padding: 20px;
-    background: linear-gradient(to bottom, #0384FC, #000000); /* Top gradient */
+  position: relative;
+  padding-bottom: 100px;
+  padding-top: 100px;
+  background: radial-gradient(50% 103% at 50% 100%, rgba(0, 34, 255, .4) 0%, rgba(255, 255, 255, 0) 100%);
+
+  /* Second gradient layer */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(100% 50% at 50% 90%, rgba(0, 47, 255, 0.616) 0%, rgba(255, 255, 255, 0) 100%);
+    opacity: 0.5;
+    z-index: 1;
     border-radius: 12px;
-  
-    /* Second gradient layer */
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(to bottom, #0384FC, #0384FC); /* Second layer gradient */
-      opacity: 0.5;
-      z-index: 1;
-      border-radius: 12px;
-    }
-  
-    /* Side gradient layer */
-    &::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(to right, #000000, #7E24FD, #0384FC); /* Side gradient */
-      opacity: 0.7;
-      z-index: 0;
-      border-radius: 12px;
-    }
-  
-    .content-inner {
-      position: relative;
-      z-index: 2;  /* Ensure the content is above the gradient layers */
-      color: #fff; /* Text color */
-      padding: 20px;
-      border-radius: 12px;
-    }
   }
+
+  /* Side gradient layer */
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(100% 100% at 50% 90%, rgba(0, 34, 255, .4) 0%, rgba(255, 255, 255, 0) 100%);
+    opacity: 0.7;
+    z-index: 0;
+    border-radius: 12px;
+  }
+}
+
+/* Container should only apply to text */
+.content-inner {
+  width: 80%;               // Set the container width to 80% of the screen
+    max-width: 1400px;        // Maximum width to prevent it stretching too far on large screens
+    margin: 0 auto;           // Center the container horizontally
+    padding: 80px 20px;          // Optional: inner padding for some space inside the container
+    z-index: 2;
   
+}
+
+h1, p {
+  text-align: left; // Keep text left-aligned
+  margin: 0; 
+}
+
+/* Mobile View Adjustments */
+@media (max-width: 768px) {
+  .content {
+    padding: 50px 0px; // Reduce padding for mobile
+  }
+
+  .content-inner {
+    width: 90%; // Adjust container width for smaller screens
+    padding: 0 20px;
+    z-index: 2;
+  }
+}

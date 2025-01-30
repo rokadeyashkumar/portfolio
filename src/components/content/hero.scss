@@ -1,0 +1,16 @@
+.container {
+    width: 80%;               // Set the container width to 80% of the screen
+    max-width: 1400px;        // Maximum width to prevent it stretching too far on large screens
+    margin: 0 auto;           // Center the container horizontally
+    padding: 60px 20px;          // Optional: inner padding for some space inside the container
+
+    p{
+        padding-top: 5px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      width: 90%;  // Adjust width for smaller screens to take up more space
+    }
+  }
