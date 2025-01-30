@@ -1,0 +1,151 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #000; // Black background
+    color: white; // White text color
+    font-family: Arial, sans-serif;
+    width: 80%;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+
+    .logo {
+      display: flex;
+      align-items: center;
+      
+      img {
+        width: 30px; // Adjust logo size
+        height: auto;
+      }
+
+      span {
+        font-size: 15px;
+        font-weight: bold;
+      }
+    }
+
+    // Hamburger Menu
+    .hamburger {
+      display: none;
+      cursor: pointer;
+      z-index: 10;
+
+      .bar1, .bar3 {
+        width: 20px;
+        height: 2px;
+        border-radius: 5px;
+        background-color: #ffffff;
+        margin: 8px 0;
+        transition: 0.4s;
+      }
+
+      &.active .bar1 {
+        transform: translate(0, 5px) rotate(-45deg);
+      }
+      &.active .bar3 {
+        transform: translate(0, -5px) rotate(45deg);
+      }
+    }
+
+    // Menu
+    .menu {
+      display: flex;
+      gap: 1.5rem;
+      list-style-type: none;
+      padding: 0;
+
+      li {
+        a {
+          color: white;
+          text-decoration: none;
+          font-size: 15px;
+          &:hover {
+            color: #ccc; // Hover effect
+          }
+        }
+      }
+
+      &.open {
+        display: block;
+      }
+    }
+
+    // Contact button
+    .contact {
+      .mail-btn {
+        color: white;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        &:hover {
+          color: #ccc;
+        }
+        svg {
+          font-size: 1.5rem;
+        }
+      }
+
+      &.show {
+        visibility: visible;
+      }
+    }
+
+    // Mobile styles
+    @media (max-width: 768px) {
+      flex-direction: column;
+     // align-items: center;
+      position: relative;
+
+      .logo{
+      position: absolute;
+      left: 10px; // Move logo to the left
+      top: 15px;
+      display: flex;
+      align-items: center;
+      }
+
+      .hamburger {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 18px;
+        z-index: 20;
+      }
+
+      .menu {
+        display: none;
+        gap: 1rem;
+        border-radius: 16px;
+        margin-top: 1rem;
+        position: absolute;
+        right: 10;
+        top: 70px;
+        background-color: #000;
+        width: 100%;
+        padding: 1rem 1rem;
+
+        li {
+          a {
+            color: white;
+            font-size: 15px;
+          }
+        }
+
+        &.open {
+          display: block;
+        }
+      }
+
+      .contact {
+        position: absolute;
+        top: 50;
+        background: none;
+        visibility: hidden;
+
+        &.show {
+          visibility: visible;
+        }
+      }
+    }
+  }

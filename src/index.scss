@@ -1,0 +1,12 @@
+/* index.scss */
+:root {
+  --background-color: #000000;
+  --text-color: #ffffff;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter Variable", "Inter Placeholder", sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}

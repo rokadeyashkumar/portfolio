@@ -1,0 +1,43 @@
+.content {
+    position: relative;
+    padding: 20px;
+    background: linear-gradient(to bottom, #0384FC, #000000); /* Top gradient */
+    border-radius: 12px;
+  
+    /* Second gradient layer */
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(to bottom, #0384FC, #0384FC); /* Second layer gradient */
+      opacity: 0.5;
+      z-index: 1;
+      border-radius: 12px;
+    }
+  
+    /* Side gradient layer */
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(to right, #000000, #7E24FD, #0384FC); /* Side gradient */
+      opacity: 0.7;
+      z-index: 0;
+      border-radius: 12px;
+    }
+  
+    .content-inner {
+      position: relative;
+      z-index: 2;  /* Ensure the content is above the gradient layers */
+      color: #fff; /* Text color */
+      padding: 20px;
+      border-radius: 12px;
+    }
+  }
+  
