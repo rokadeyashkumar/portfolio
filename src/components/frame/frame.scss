@@ -15,7 +15,7 @@
     background: radial-gradient(100% 50% at 50% 90%, rgba(0, 47, 255, 0.616) 0%, rgba(255, 255, 255, 0) 100%);
     opacity: 0.5;
     z-index: 1;
-    border-radius: 12px;
+    
   }
 
   /* Side gradient layer */
@@ -29,7 +29,7 @@
     background: radial-gradient(100% 100% at 50% 90%, rgba(0, 34, 255, .4) 0%, rgba(255, 255, 255, 0) 100%);
     opacity: 0.7;
     z-index: 0;
-    border-radius: 12px;
+    
   }
 }
 

@@ -5,8 +5,10 @@ const Hero = () => {
   return (
     <div className="container">
         <div className="main-content">
-          <h1>Welcome to My Portfolio</h1>
-          <p>This is a short description of what I do</p>
+          <p className="main-top">Welcome to my creative universe.</p>
+          <h1>I’m Yashkumar Rokade, a ui designer.</h1>
+          {/*<h1>The web builder for stunning sites.</h1>  */}
+          <p className="main-bottom">Where creativity meets functionality to build stunning, user-centric digital experiences.</p>
         </div>
       </div>
   );

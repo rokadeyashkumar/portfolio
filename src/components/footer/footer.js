@@ -3,6 +3,7 @@ import { RiTwitterXFill } from "react-icons/ri";
 import { AiFillInstagram } from "react-icons/ai";
 import { FaLinkedin } from "react-icons/fa";
 import { IoLogoGithub } from "react-icons/io";
+import { Link } from 'react-router-dom'; 
 import "./footer.scss";
 
 const Footer = () => {
@@ -12,7 +13,9 @@ const Footer = () => {
       {/* Left Section */}
       <div className="footer-left">
         <div className="logo-container">
+        <Link to='/'>
           <img className="img" src={process.env.PUBLIC_URL + "/logo.png"} alt="Logo" />
+          </Link>
           <p className="slog">Every pixel tells a story.</p>
         </div>
       </div>
