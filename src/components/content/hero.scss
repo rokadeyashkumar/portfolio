@@ -15,7 +15,7 @@
 
   .main-top{
     font-size: 12px;
-    font-weight: 400;
+    font-weight: 600;
     margin-bottom: 10px;
     
     
@@ -38,5 +38,16 @@
   @media (max-width: 768px) {
     .container {
       width: 90%;  // Adjust width for smaller screens to take up more space
+      
+      main-top{
+        font-weight: 600;
+      }
+      h1{
+        font-size: 58px;
+        padding-top: 5px;
+      }
+      main-bottom {
+        font-size: 20px;
+      }
     }
   }

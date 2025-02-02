@@ -5,10 +5,10 @@ const resource = () => {
   return (
     <div>
 
-<div className="content">
-      <div className="content-inner">
+      <div className="content">
+        <div className="content-inner">
 
-      </div>
+        </div>
       </div>
     </div>
   )
