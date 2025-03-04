@@ -6,6 +6,7 @@ import Project from './components/pages/project';
 import About from './components/pages/about';
 import Skill from './components/pages/skill';
 import Blog from './components/pages/blog';
+import Contact from './components/pages/contact';
 import Resource from './components/pages/resource';
 import Footer from './components/footer/footer';
 import './App.scss';
@@ -33,6 +34,9 @@ function App() {
 
            {/* Blog page route */}
            <Route path="/resource" element={<Resource />} />
+
+           {/* Contact page route */}
+           <Route path="/contact" element={<Contact />} />
 
           {/* Add more routes for other pages here */}
           {/* Example: <Route path="/about" element={<About />} /> */}

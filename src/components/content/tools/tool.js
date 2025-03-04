@@ -3,15 +3,15 @@ import "../tools/tool.scss";
 
 const Tool = () => {
   const icons = [
-    { url: "https://github.com/rokadeyashkumar/tool-icon/blob/icons/tools-icon/figma.png?raw=true", name: "Figma" },
-    { url: "https://github.com/rokadeyashkumar/tool-icon/blob/icons/tools-icon/html.png?raw=true", name: "HTML" },
-    { url: "https://github.com/rokadeyashkumar/tool-icon/blob/icons/tools-icon/css.png?raw=true", name: "CSS" },
-    { url: "https://github.com/rokadeyashkumar/tool-icon/blob/icons/tools-icon/node.png?raw=true", name: "Node.js" },
-    { url: "https://github.com/rokadeyashkumar/tool-icon/blob/icons/tools-icon/php.png?raw=true", name: "PHP" },
-    { url: "https://github.com/rokadeyashkumar/tool-icon/blob/icons/tools-icon/react.png?raw=true", name: "React" },
-    { url: "https://github.com/rokadeyashkumar/tool-icon/blob/icons/tools-icon/white.png?raw=true", name: "SCSS" },
-    { url: "https://github.com/rokadeyashkumar/tool-icon/blob/icons/tools-icon/photoshop.png?raw=true", name: "Photoshop" },
-    { url: "https://github.com/rokadeyashkumar/tool-icon/blob/icons/tools-icon/llustrator.png?raw=true", name: "Illustrator" },
+    { url: "https://github.com/rokadeyashkumar/portfolio-data/blob/main/tool-icon/figma.png?raw=true", name: "Figma" },
+    { url: "https://github.com/rokadeyashkumar/portfolio-data/blob/main/tool-icon/html.png?raw=true", name: "HTML" },
+    { url: "https://github.com/rokadeyashkumar/portfolio-data/blob/main/tool-icon/css.png?raw=true", name: "CSS" },
+    { url: "https://github.com/rokadeyashkumar/portfolio-data/blob/main/tool-icon/node.png?raw=true", name: "Node.js" },
+    { url: "https://github.com/rokadeyashkumar/portfolio-data/blob/main/tool-icon/php.png?raw=true", name: "PHP" },
+    { url: "https://github.com/rokadeyashkumar/portfolio-data/blob/main/tool-icon/react.png?raw=true", name: "React" },
+    { url: "https://github.com/rokadeyashkumar/portfolio-data/blob/main/tool-icon/scss.png?raw=true", name: "SCSS" },
+    { url: "https://github.com/rokadeyashkumar/portfolio-data/blob/main/tool-icon/photoshop.png?raw=true", name: "Photoshop" },
+    { url: "https://github.com/rokadeyashkumar/portfolio-data/blob/main/tool-icon/llustrator.png?raw=true", name: "Illustrator" },
   ];
 
   return (

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
+import Gallery from '../gallery/gallery'
 import '../frame/frame.scss';
 import './style/about.scss';
 
@@ -8,7 +9,7 @@ const About = () => {
 
   // Fetch the about-me.md file from GitHub
   useEffect(() => {
-    fetch("https://raw.githubusercontent.com/rokadeyashkumar/about-me/main/about/about-me.md")
+    fetch("https://raw.githubusercontent.com/rokadeyashkumar/portfolio-data/main/about-me/about-me.md")
       .then((response) => response.text())  // Get the text of the markdown
       .then((data) => setAboutContent(data)) // Store the content in the state
       .catch((error) => console.error("Error fetching markdown:", error)); // Error handling
@@ -32,6 +33,9 @@ const About = () => {
       <div className="about-markdown">
             <ReactMarkdown>{aboutContent}</ReactMarkdown>
           </div>
+
+          {/* Images */}
+          <Gallery />
 
       <div className="content">
         <div className="content-inner">
