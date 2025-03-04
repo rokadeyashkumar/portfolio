@@ -1,0 +1,188 @@
+.gallery-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers content vertically */
+    align-items: center; /* Centers content horizontally */
+    text-align: center; /* Ensures text is centered */
+  }
+  
+  .gallery-top {
+    background: linear-gradient(309deg, rgb(166, 221, 255) 2.25225%, rgb(51, 194, 255) 48.0785%, rgb(0, 119, 255) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  
+  .gallery-main {
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: -0.02rem;
+    padding-top: 10px;
+    padding-bottom: 8px;
+  }
+  
+  .gallery-bottom {
+    text-align: center;
+    max-width: 450px;
+    line-height: 28px;
+    font-size: 18px;
+    color: #999;
+  }
+  
+  .gallery-wrapper {
+    position: relative;
+    width: 74.3%; /* 80% width for the image container */
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  
+  .gallery {
+    display: flex;
+    gap: 16px;
+    transition: transform 0.5s ease-in-out;
+    position: relative;
+    padding-top: 20px;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    scroll-behavior: smooth; /* Smooth scrolling */
+    
+  }
+  
+  /* Hide scrollbar for cleaner look */
+  .gallery::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .gallery {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+   
+  }
+  
+  /* Left Gradient */
+  /* .gallery-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px; 
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    z-index: 2;
+  }
+  
+  /* Right Gradient */
+ /* .gallery-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px; /* Adjust as needed */
+  /*  height: 100%;
+    background: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    z-index: 2;
+  } 
+  */
+
+  /* Image Styling */
+  .gallery img {
+    object-fit: cover;
+    width: 270px; /* Fixed width */
+    height: 360px; /* Fixed height */
+    border-radius: 16px;
+    flex-shrink: 0; /* Prevent images from shrinking */
+    transition: 0.3s ease-in-out;
+  }
+  
+  /* Add a gradient overlay on hover */
+   img:hover {
+    filter: brightness(40%); /* Dim the image slightly */
+  }
+  
+  /* Create a gradient overlay */
+  img::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background: rgb(0,0,0);
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+    opacity: 2; 
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 16px;
+  }
+  
+  img:hover::after {
+    opacity: 1; /* Show gradient on hover */
+  }
+  
+  /* Buttons for Desktop */
+  .gallery-button {
+    position: absolute;
+    top: 52%;
+    transform: translateY(-50%);
+    z-index: 3;
+    background: #000;
+    border: none;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: background 0.3s ease;
+    font-size: 20px;
+    color: white;
+    display: none; /* Hide by default */
+    
+    /* Center the SVG icon inside */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery-button svg {
+    width: 20px;
+    height: 38px;
+}
+
+  
+  .gallery-button:hover {
+    background: #5e5e5e;
+  }
+  
+  .gallery-button.left {
+    left: 20px;
+  }
+  
+  .gallery-button.right {
+    right: 20px;
+  }
+  
+  /* Show buttons only on desktop */
+  @media (min-width: 768px) {
+    .gallery-button {
+      display: block; /* Show buttons on desktop */
+    }
+  }
+  
+  /* Mobile View Adjustments */
+  @media (max-width: 767px) {
+    .gallery-wrapper {
+      width: 100%; /* Full width on mobile */
+    }
+    .gallery{
+        margin-left: 18px;
+    }
+  
+    .gallery-wrapper::before,
+    .gallery-wrapper::after {
+        width: 60px;
+     // display: none; /* Hide gradients on mobile */
+    }
+
+    .gallery-button{
+      display: none;
+    }
+  }

@@ -1,82 +1,88 @@
 .tool-marquee {
     width: 100%;
     overflow: hidden;
-    padding: 280px 0;
+    padding-top: 280px;
+    padding-bottom: 20px;
     position: relative;
-
+  
     /* Left Side Gradient */
     &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 500px; /* Adjust width of the gradient */
-        height: 100%;   
-        background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
-        z-index: 2;
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 500px; /* Adjust width of the gradient */
+      height: 100%;
+      background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+      z-index: 2;
     }
-
+  
     /* Right Side Gradient */
     &::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 500px; /* Adjust width of the gradient */
-        height: 100%;
-        background: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
-        z-index: 2;
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 500px; /* Adjust width of the gradient */
+      height: 100%;
+      background: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+      z-index: 2;
     }
-
+  
     .marquee-content {
-        display: flex;
-        align-items: center;
-        gap: 90px;
-        width: max-content; // Allow infinite scrolling without breaking
-        padding-left: 90px;
-        animation: marquee 40s linear infinite;
+      display: flex;
+      align-items: center; /* Ensure all items are vertically centered */
+      gap: 90px;
+      width: max-content; // Allow infinite scrolling without breaking
+      padding-left: 90px;
+      animation: marquee 40s linear infinite;
     }
-
+  
     .marquee-wrapper {
-        display: flex;
-        width: max-content; // Ensure content repeats infinitely
+      display: flex;
+      width: max-content; // Ensure content repeats infinitely
     }
-
+  
     .icon-container {
-        display: flex;
-        align-items: center;
-        gap: 5px; // Space between icon and name
-
-        .tool-icon {
-            height: 40px;
-            width: auto;
-        }
-
-        .icon-name {
-            font-size: 16px;
-            font-weight: 500;
-            white-space: nowrap; // Prevents text from wrapping
-        }
+      display: flex;
+      align-items: center; /* Align icon and name vertically */
+      gap: 5px; // Space between icon and name
+  
+      .tool-icon {
+        height: 40px;
+        width: auto;
+        display: block; /* Ensure the image behaves as a block element */
+        margin: 0; /* Remove any default margin */
+        padding: 0; /* Remove any default padding */
+      }
+  
+      .icon-name {
+        font-size: 16px;
+        font-weight: 500;
+        white-space: nowrap; // Prevents text from wrapping
+        line-height: 1; /* Ensure text doesn't have extra spacing */
+        margin: 0; /* Remove any default margin */
+        padding: 0; /* Remove any default padding */
+      }
     }
-}
-
-@keyframes marquee {   
+  }
+  
+  @keyframes marquee {
     0% {
-        transform: translateX(0);
+      transform: translateX(0);
     }
     100% {
-        transform: translateX(-100%);
+      transform: translateX(-100%);
     }
-}
-
-@media (max-width: 768px){
-    .tool-marquee{
-
-        &::before{
-            width: 100px;
-        }
-        &::after{
-            width: 100px;
-        }
+  }
+  
+  @media (max-width: 768px) {
+    .tool-marquee {
+      &::before {
+        width: 100px;
+      }
+      &::after {
+        width: 100px;
+      }
     }
-}
+  }

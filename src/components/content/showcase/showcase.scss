@@ -1,0 +1,107 @@
+img {
+    margin-bottom: 0px;
+    pointer-events: none;
+    user-select: none;
+}
+
+// Creative Section Container
+.creative-section {
+    position: relative;
+    padding-top: 200px;
+    display: flex;
+   
+    align-items: center;
+    justify-content: space-between;
+    overflow: visible; // Fix: Prevents text from being cut off
+    
+    // Content Showcase (Headline and Paragraph)
+    .content-showcase {
+        position: relative;
+        
+        z-index: 2;
+        text-align: left;
+        padding-left: 60px; // Adjusted for proper spacing
+      
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #999;
+            line-height: 1.6;
+        }
+    }
+
+
+    // Gradient Overlay
+    .gradient-overlay {
+        position: absolute;
+        background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+
+    // Image Showcase (Marquee Effect)
+    .image-showcase {
+        position: relative;
+        width: 100%;
+        max-width: fit-content;
+         
+        padding: 40px 0;
+
+        .marquee-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            .marquee-line {
+                display: flex;
+                gap: 14px;
+                padding: 12px;
+                width: max-content; // Infinite scrolling
+                animation: marquee 40s linear infinite;
+                
+                // Duplicate images for seamless looping
+                &::after {
+                    content: "";
+                    display: flex;
+                    gap: 14px;
+                }
+
+                img {
+                    width: 400px;
+                    height: 250px;
+                    border-radius: 10px;
+                    object-fit: cover;
+                }
+            }
+
+            .middle-line {
+                animation-duration: 45s;
+            }
+
+            .bottom-line {
+                animation-duration: 50s;
+            }
+        }
+    }
+}
+
+// Marquee Animation Keyframes
+@keyframes marquee {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
