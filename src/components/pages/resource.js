@@ -1,5 +1,6 @@
 import React from 'react'
 import '../frame/frame.scss'
+import UnderDevelopment from '../underdevpg/Under-development'
 
 const resource = () => {
   return (
@@ -7,7 +8,7 @@ const resource = () => {
 
       <div className="content">
         <div className="content-inner">
-
+          <UnderDevelopment />
         </div>
       </div>
     </div>
