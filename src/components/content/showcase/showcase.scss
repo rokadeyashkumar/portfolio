@@ -16,10 +16,10 @@ img {
     
     // Content Showcase (Headline and Paragraph)
     .content-showcase {
-        position: relative;
-        
+        position: absolute;
         z-index: 2;
         text-align: left;
+        max-width: 550px;
         padding-left: 60px; // Adjusted for proper spacing
       
 
@@ -28,7 +28,7 @@ img {
             font-weight: 700;
             color: #ffffff;
             
-            margin-bottom: 20px;
+            margin-bottom: 16px;
         }
 
         p {
@@ -61,7 +61,7 @@ img {
         .marquee-wrapper {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+           
 
             .marquee-line {
                 display: flex;
@@ -104,4 +104,47 @@ img {
     to {
         transform: translateX(-50%);
     }
+}
+
+// 📱 Mobile Responsive Styles
+@media screen and (max-width: 768px) {
+  .creative-section {
+    
+    flex-direction: column;
+    align-items: flex-start;
+
+    .content-showcase {
+      position: absolute;
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-top: 120px;
+      max-width: 280px;
+
+
+      h2 {
+        font-size: 1.8rem;
+      }
+
+      p {
+        font-size: 1rem;
+        color: #bbb;
+      }
+    }
+
+    .image-showcase {
+      padding: 20px 0;
+
+      .marquee-wrapper {
+        .marquee-line {
+          gap: 10px;
+          padding: 8px;
+
+          img {
+            width: 240px;
+            height: 160px;
+          }
+        }
+      }
+    }
+  }
 }
