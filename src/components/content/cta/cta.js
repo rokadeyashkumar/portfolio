@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import '../cta/cta.scss';
 import msgImage from '../msg.png'; // Import the image
@@ -20,7 +21,9 @@ const Cta = () => {
       <div className="cta-markdown">
         <img src={msgImage} alt="Message" /> {/* Use the imported image */}
         <ReactMarkdown>{ctaContent}</ReactMarkdown>
-        <a href=''>Learn more &#8250; </a>
+        <Link to="/contact">
+        <a>Learn more &#8250; </a>
+        </Link>
       </div>
     </div>
   );

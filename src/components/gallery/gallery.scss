@@ -165,10 +165,22 @@
     .gallery-button {
       display: block; /* Show buttons on desktop */
     }
+    
   }
   
   /* Mobile View Adjustments */
   @media (max-width: 767px) {
+    .gallery-content{
+      padding-top: 120px;
+      
+      h1{
+        font-size: 24px;
+      }
+    }
+    .gallery-bottom{
+      font-size: 16px;
+      line-height: 22px;
+    }
     .gallery-wrapper {
       width: 100%; /* Full width on mobile */
     }
