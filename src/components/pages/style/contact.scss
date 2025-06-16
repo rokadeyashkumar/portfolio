@@ -1,0 +1,112 @@
+
+.single-card {
+  background: rgb(255 255 255 / 4.9%);
+  border-radius: 16px;
+  padding: 40px;
+  max-width: 1000px;
+  margin: 60px auto;
+  backdrop-filter: blur(1.5px);
+  -webkit-backdrop-filter: blur(1.5px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  position: relative; // ✅ Add this
+  z-index: 1;
+
+  .headline {
+    font-size: 50px;
+    font-weight: 500;
+    margin-bottom: 30px;
+    text-align: left;
+    color: #ffffff;
+  }
+
+  .card-content {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+
+    .card-left {
+      flex: 1;
+
+      form {
+        display: flex;
+        flex-direction: column;
+        
+        label{
+          padding-bottom: 5px;
+        }
+
+        input,
+        textarea {
+          padding: 12px;
+          margin-bottom: 16px;
+          border-radius: 8px;
+          background: rgb(255 255 255 / 6%);
+          border: 0.4px solid rgba(4, 0, 255, 0.13);
+          color: #ffffff;
+          font-size: 14px;
+          
+
+          &::placeholder {
+            color: #bbb;
+          }
+
+          &:focus {
+            outline: 2px solid #007bff;
+            
+          }
+        }
+
+
+        button {
+          padding: 12px;
+          border: none;
+          border-radius: 20px;
+          width: 160px;
+          background: #ffffff;
+          color: #000000;
+          font-weight: 600;
+          cursor: pointer;
+          transition: 0.3s ease;
+
+          &:hover {
+            background: #e4e4e4;
+          }
+        }
+      }
+    }
+
+    .card-right {
+      flex: 1;
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      .inner-info-card {
+        background: rgb(255 255 255 / 6%);
+        border: 0.4px solid rgba(4, 0, 255, 0.13);
+        height: 350px;
+        padding-left: 24px;
+        
+        border-radius: 12px;
+        width: 100%;
+        color: #ffffff;
+
+        h2 {
+          margin-bottom: 220px;
+          font-weight: 600;
+          color: #ffffff;
+        }
+
+        p {
+          color: #ccc;
+          line-height: 1.6;
+        }
+      }
+    }
+  }
+}

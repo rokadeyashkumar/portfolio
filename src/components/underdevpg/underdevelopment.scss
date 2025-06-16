@@ -1,0 +1,44 @@
+.under-development {
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+    color: #fff;
+  
+    .icon {
+      font-size: 4rem;
+      margin-bottom: 20px;
+      animation: bounce 1.5s infinite;
+    }
+  
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+  
+    p {
+      font-size: 1.1rem;
+      color: #ccc;
+      max-width: 600px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+  
+    .note {
+      color: #999;
+      font-style: italic;
+    }
+  
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-8px);
+      }
+    }
+  }
+  
