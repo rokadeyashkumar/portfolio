@@ -51,11 +51,13 @@ const Contact = () => {
                 value={formData.email}
                 onChange={handleChange}
                 required
+                className={!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email) && formData.email ? "invalid" : ""}
               />
+
 
               <label for="name">Messagee</label>
               <textarea
-              type="text"
+                type="text"
                 placeholder="Let me know how can i help you"
                 name="message"
                 rows="5"
@@ -63,7 +65,29 @@ const Contact = () => {
                 onChange={handleChange}
                 required
               />
-              <button type="submit">Send Message</button>
+              <button
+                type="button"
+                onClick={() => {
+                  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+                  if (!formData.name || !formData.email || !formData.message) {
+                    alert("Please fill in all fields.");
+                    return;
+                  }
+
+                  if (!emailRegex.test(formData.email)) {
+                    alert("Please enter a valid email address.");
+                    return;
+                  }
+
+                  // Everything is valid
+                  window.location.href = `mailto:rokadeyashkumar@example.com?subject=Message from ${formData.name}&body=${formData.message} (%0A%0AFrom: ${formData.email})`;
+                }}
+              >
+                Send Message
+              </button>
+
+
             </form>
           </div>
 
