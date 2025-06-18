@@ -43,7 +43,7 @@ const Navbar = () => {
 
       {/* Mail Button */}
       <div className={`menu open contact ${isMenuOpen ? "show" : ""}`}>
-        <a href="mailto:your-email@example.com" className="mail-btn">
+        <a href="rokadeyashkumar@example.com" className="mail-btn">
           <FaEnvelope />
         </a>
       </div>

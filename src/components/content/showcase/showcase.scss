@@ -1,115 +1,102 @@
 img {
-    margin-bottom: 0px;
-    pointer-events: none;
-    user-select: none;
+  margin-bottom: 0px;
+  pointer-events: none;
+  user-select: none;
 }
 
 // Creative Section Container
 .creative-section {
+  position: relative;
+  padding-top: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden; // ✅ Prevent horizontal scroll
+
+  // Content Showcase (Headline and Paragraph)
+  .content-showcase {
+    position: absolute;
+    z-index: 2;
+    text-align: left;
+    max-width: 550px;
+    padding-left: 60px;
+
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 16px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: #999;
+      line-height: 1.6;
+    }
+  }
+
+  // Gradient Overlay
+  .gradient-overlay {
+    position: absolute;
+    background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  // Image Showcase (Marquee Effect)
+  .image-showcase {
     position: relative;
-    padding-top: 200px;
-    display: flex;
-   
-    align-items: center;
-    justify-content: space-between;
-    overflow: visible; // Fix: Prevents text from being cut off
-    
-    // Content Showcase (Headline and Paragraph)
-    .content-showcase {
-        position: absolute;
-        z-index: 2;
-        text-align: left;
-        max-width: 550px;
-        padding-left: 60px; // Adjusted for proper spacing
-      
+    width: 100%;
+    max-width: 100%; // ✅ prevent expanding beyond screen
+    overflow: hidden; // ✅ hide overflow scroll
+    padding: 40px 0;
 
-        h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #ffffff;
-            
-            margin-bottom: 16px;
+    .marquee-wrapper {
+      display: flex;
+      flex-direction: column;
+
+      .marquee-line {
+        display: flex;
+        gap: 14px;
+        padding: 12px;
+        min-width: 100%; // ✅ keep full width for animation
+        animation: marquee 15s linear infinite;
+
+        img {
+          width: 400px;
+          height: 250px;
+          border-radius: 10px;
+          object-fit: cover;
         }
+      }
 
-        p {
-            font-size: 1.2rem;
-            color: #999;
-            line-height: 1.6;
-        }
+      .middle-line {
+        animation-duration: 20s;
+      }
+
+      .bottom-line {
+        animation-duration: 25s;
+      }
     }
-
-
-    // Gradient Overlay
-    .gradient-overlay {
-        position: absolute;
-        background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 1;
-    }
-
-    // Image Showcase (Marquee Effect)
-    .image-showcase {
-        position: relative;
-        width: 100%;
-        max-width: fit-content;
-         
-        padding: 40px 0;
-
-        .marquee-wrapper {
-            display: flex;
-            flex-direction: column;
-           
-
-            .marquee-line {
-                display: flex;
-                gap: 14px;
-                padding: 12px;
-                width: max-content; // Infinite scrolling
-                animation: marquee 40s linear infinite;
-                
-                // Duplicate images for seamless looping
-                &::after {
-                    content: "";
-                    display: flex;
-                    gap: 14px;
-                }
-
-                img {
-                    width: 400px;
-                    height: 250px;
-                    border-radius: 10px;
-                    object-fit: cover;
-                }
-            }
-
-            .middle-line {
-                animation-duration: 45s;
-            }
-
-            .bottom-line {
-                animation-duration: 50s;
-            }
-        }
-    }
+  }
 }
 
 // Marquee Animation Keyframes
 @keyframes marquee {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(-50%);
-    }
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 // 📱 Mobile Responsive Styles
 @media screen and (max-width: 768px) {
   .creative-section {
-    
     flex-direction: column;
     align-items: flex-start;
 
@@ -119,7 +106,6 @@ img {
       padding-right: 20px;
       padding-top: 120px;
       max-width: 280px;
-
 
       h2 {
         font-size: 1.8rem;
