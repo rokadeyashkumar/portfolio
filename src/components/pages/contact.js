@@ -81,7 +81,7 @@ const Contact = () => {
                   }
 
                   // Everything is valid
-                  window.location.href = `mailto:rokadeyashkumar@example.com?subject=Message from ${formData.name}&body=${formData.message} (%0A%0AFrom: ${formData.email})`;
+                  window.location.href = `mailto:rokadeyashkumar@gmail.com?subject=Message from ${formData.name}&body=${formData.message} (%0A%0AFrom: ${formData.email})`
                 }}
               >
                 Send Message
