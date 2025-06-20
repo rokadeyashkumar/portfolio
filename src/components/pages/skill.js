@@ -1,75 +1,39 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import '../frame/frame.scss';
 import './style/skill.scss';
 
-const skills = [
-  {
-    url: "https://github.com/rokadeyashkumar/portfolio-data/blob/main/tool-icon/figma.png?raw=true",
-    name: "Figma",
-    desc: "UI/UX Design Tool"
-  },
-  {
-    url: "https://github.com/rokadeyashkumar/portfolio-data/blob/main/tool-icon/html.png?raw=true",
-    name: "HTML",
-    desc: "Markup Language"
-  },
-  {
-    url: "https://github.com/rokadeyashkumar/portfolio-data/blob/main/tool-icon/css.png?raw=true",
-    name: "CSS",
-    desc: "Styling Layouts"
-  },
-  {
-    url: "https://github.com/rokadeyashkumar/portfolio-data/blob/main/tool-icon/scss.png?raw=true",
-    name: "SCSS",
-    desc: "Advanced CSS"
-  },
-  {
-    url: "https://github.com/rokadeyashkumar/portfolio-data/blob/main/tool-icon/react.png?raw=true",
-    name: "React",
-    desc: "Frontend Library"
-  },
-  {
-    url: "https://github.com/rokadeyashkumar/portfolio-data/blob/main/tool-icon/node.png?raw=true",
-    name: "Node.js",
-    desc: "Backend Runtime"
-  },
-  {
-    url: "https://github.com/rokadeyashkumar/portfolio-data/blob/main/tool-icon/php.png?raw=true",
-    name: "PHP",
-    desc: "Server Scripting"
-  },
-  {
-    url: "https://github.com/rokadeyashkumar/portfolio-data/blob/main/tool-icon/photoshop.png?raw=true",
-    name: "Photoshop",
-    desc: "Image Editing"
-  },
-  {
-    url: "https://github.com/rokadeyashkumar/portfolio-data/blob/main/tool-icon/llustrator.png?raw=true",
-    name: "Illustrator",
-    desc: "Vector Design"
-  }
-];
+const SKILLS_URL = 'https://raw.githubusercontent.com/rokadeyashkumar/portfolio-data/main/skills/skills.json';
 
 const Skill = () => {
+  const [skills, setSkills] = useState([]);
+
+  useEffect(() => {
+    fetch(SKILLS_URL)
+      .then(res => {
+        if (!res.ok) throw new Error('Failed to load skills');
+        return res.json();
+      })
+      .then(data => setSkills(data))
+      .catch(err => console.error(err));
+  }, []);
+
   return (
     <div className="content">
       <div className="content-inner">
         <h2 className="skill-title">Skills That Make Me Stand Out</h2>
-
         <div className="skill-container">
           <div className="skill-list">
-            {skills.map((skill, index) => (
-              <div className="skill-row" key={index}>
+            {skills.map((skill, i) => (
+              <div className="skill-row" key={i}>
                 <img src={skill.url} alt={skill.name} />
                 <div className="skill-text">
                   <div className="skill-headline">{skill.name}</div>
-                  <p className="skill-des">Creative tool</p> {/* update per skill */}
+                  <p className="skill-des">{skill.desc}</p>
                 </div>
               </div>
             ))}
           </div>
         </div>
-
       </div>
     </div>
   );
