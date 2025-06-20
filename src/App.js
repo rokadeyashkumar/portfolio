@@ -27,7 +27,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
 
           {/* ✅ Fallback Route */}
-          <Route path="*" element={<UnderDevelopment />} />
+          <Route path="/*" element={<UnderDevelopment />} />
         </Routes>
         <Footer />
       </div>
